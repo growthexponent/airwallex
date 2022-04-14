@@ -1,6 +1,6 @@
-# airwallex_flutter
+# Airwallex Flutter
 
-A new flutter plugin project.
+A Flutter Package to add Airwallex payments API integration into Flutter Apps.
 
 ## Getting Started
 
