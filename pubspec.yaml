@@ -1,7 +1,7 @@
 name: airwallex_flutter
 description: Airwallex Payment API Package.
-version: 0.0.1
-homepage:
+version: 0.0.1+210000001
+homepage: https://github.com/growthexponent/Airwallex-Flutter
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
