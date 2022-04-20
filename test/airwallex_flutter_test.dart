@@ -1,6 +1,6 @@
+import 'package:airwallex_flutter/airwallex_flutter.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:airwallex_flutter/airwallex_flutter.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('airwallex_flutter');

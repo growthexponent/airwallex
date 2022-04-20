@@ -31,7 +31,8 @@ class AirwallexFlutterWeb {
       default:
         throw PlatformException(
           code: 'Unimplemented',
-          details: 'airwallex_flutter for web doesn\'t implement \'${call.method}\'',
+          details:
+              'airwallex_flutter for web doesn\'t implement \'${call.method}\'',
         );
     }
   }
