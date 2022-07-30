@@ -1,14 +1,16 @@
 import 'dart:convert';
 
 class Login {
-  final String clientId;
-  final String apiKey;
-  final String token;
+  String? clientId;
+  String? apiKey;
+  String? token;
+  String? expiresAt;
 
-  const Login({
-    required this.clientId,
-    required this.apiKey,
-    required this.token,
+  Login({
+    this.clientId,
+    this.apiKey,
+    this.token,
+    this.expiresAt,
   });
 
   Map<String, dynamic> toMap() {
@@ -16,14 +18,16 @@ class Login {
       'clientId': clientId,
       'apiKey': apiKey,
       'token': token,
+      'expiresAt': expiresAt,
     };
   }
 
-  static Login? fromMap(Map<String, dynamic> map) {
+  static Login fromMap(Map<String, dynamic> map) {
     return Login(
       clientId: map['clientId'],
       apiKey: map['apiKey'],
       token: map['token'],
+      expiresAt: map['expiresAt'],
     );
   }
 
@@ -33,6 +37,6 @@ class Login {
 
   @override
   String toString() {
-    return 'Login(clientId: $clientId, apiKey: $apiKey, token: $token)';
+    return 'Login(clientId: $clientId, apiKey: $apiKey, token: $token, expiresAt: $expiresAt)';
   }
 }

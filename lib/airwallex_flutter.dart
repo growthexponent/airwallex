@@ -1,13 +1,25 @@
 import 'dart:async';
 
+import 'package:airwallex_flutter/authentication/login/login.dart';
 import 'package:airwallex_flutter/provider/login_provider.dart';
 import 'package:flutter/services.dart';
 
 class AirwallexFlutter {
   static const MethodChannel _channel = MethodChannel('airwallex_flutter');
-  late LoginProvider login;
+  late Login login;
+  late LoginProvider loginProvider;
   late bool authenticated;
   late String authToken;
+
+  get clientId => null;
+  get apiKey => null;
+
+  setLoginCredentials(_clientId, _apiKey) {
+    login = Login(
+      clientId: _clientId,
+      apiKey: _apiKey,
+    );
+  }
 
   /// Return the current platform version
   static Future<String?> get platformVersion async {
@@ -15,14 +27,9 @@ class AirwallexFlutter {
     return version;
   }
 
-  /// Return the current platform version
-  Future<String?> get loginToken async {
-    login = LoginProvider();
-    final String? token = (await login.getToken(clientId, apiKey)) as String?;
-    return token;
+  /// Return login token
+  Future get loginToken async {
+    loginProvider = LoginProvider();
+    return await loginProvider.getToken(clientId, apiKey);
   }
-
-  get apiKey => null;
-
-  get clientId => null;
 }

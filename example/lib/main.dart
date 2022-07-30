@@ -29,7 +29,9 @@ class _MyAppState extends State<MyApp> {
   Future<void> initPlatformState() async {
     AirwallexFlutter airwallexFlutter = AirwallexFlutter();
     String platformVersion;
-    String loginToken;
+
+    airwallexFlutter.setLoginCredentials('hNQk1gTtROKtyQyUogxKyg',
+        '9a5429af40047688cc63321374f805a08edad91cf037f9fad0b8249240689a1eeb83c5a0626a41bd7401900ff15ed8ee');
 
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
@@ -43,9 +45,9 @@ class _MyAppState extends State<MyApp> {
     // API messages may fail, so we use a try/catch Exception.
     // We also handle the message potentially returning null.
     try {
-      loginToken = await airwallexFlutter.loginToken ?? '';
+      _loginToken = await airwallexFlutter.loginToken ?? '';
     } on Exception {
-      loginToken = '';
+      _loginToken = '';
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -55,7 +57,6 @@ class _MyAppState extends State<MyApp> {
 
     setState(() {
       _platformVersion = platformVersion;
-      _loginToken = airwallexFlutter.loginToken as String;
     });
   }
 
