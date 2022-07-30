@@ -30,8 +30,8 @@ class _MyAppState extends State<MyApp> {
     AirwallexFlutter airwallexFlutter = AirwallexFlutter();
     String platformVersion;
 
-    airwallexFlutter.setLoginCredentials('hNQk1gTtROKtyQyUogxKyg',
-        '9a5429af40047688cc63321374f805a08edad91cf037f9fad0b8249240689a1eeb83c5a0626a41bd7401900ff15ed8ee');
+    airwallexFlutter.setLoginCredentials('',
+        '');
 
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
